@@ -1,0 +1,227 @@
+
+<style>
+:root{--blue:#004AAD;--royal:#0B5CFF;--navy:#061A3A;--text:#111827;--muted:#64748B;--light:#F5F8FF;--white:#fff;--green:#00A86B;--shadow:0 24px 60px rgba(6,26,58,.14)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--text);background:linear-gradient(120deg,#fff 0%,#fff 45%,#edf5ff 100%)}
+a{text-decoration:none;color:inherit}
+.page{overflow:hidden}
+.nav{width:min(1180px,92%);margin:auto;padding:16px 0;display:flex;align-items:center;justify-content:space-between}
+.brand img{width:190px;height:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:30px;font-weight:800;font-size:14px}
+.login{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;border-radius:8px;font-weight:900;transition:.25s;border:1px solid transparent}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--royal));color:#fff;box-shadow:0 16px 34px rgba(0,74,173,.25)}
+.btn-dark{background:var(--navy);color:#fff;box-shadow:0 16px 34px rgba(6,26,58,.22)}
+.btn-light{background:white;color:var(--blue);border:1px solid #BBD4FF}
+.hero{width:min(1180px,92%);margin:45px auto 70px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.eyebrow{color:var(--blue);font-size:13px;font-weight:950;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}
+h1{font-size:clamp(42px,5vw,70px);line-height:1;letter-spacing:-.06em;margin:0 0 20px;color:#071430}
+h1 span{color:var(--royal)}
+.hero p{font-size:18px;line-height:1.65;color:#475569;font-weight:600;max-width:600px}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.stats{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap}
+.stat{display:flex;gap:12px;align-items:center;color:#0B1B3A;font-weight:900}
+.stat span{display:block;color:#64748B;font-size:13px;font-weight:700}
+.hero-visual{background:white;border:1px solid #dce8f8;border-radius:28px;padding:24px;box-shadow:var(--shadow)}
+.dashboard{border:1px solid #dce8f8;border-radius:20px;padding:20px;background:linear-gradient(180deg,#fff,#f8fbff)}
+.dash-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.dash-logo{font-weight:950;color:var(--navy)}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.metric{background:white;border:1px solid #e4edf8;border-radius:14px;padding:16px}
+.metric b{display:block;font-size:24px;color:#071430}
+.metric small{color:var(--green);font-weight:900}
+.chart{height:150px;margin-top:16px;border-radius:16px;background:linear-gradient(135deg,#eef5ff,#fff);display:grid;place-items:center;color:var(--blue);font-weight:900}
+section{width:min(1180px,92%);margin:0 auto 80px}
+.section-head{text-align:center;max-width:780px;margin:0 auto 38px}
+.section-head h2{font-size:clamp(32px,4vw,48px);line-height:1.08;margin:0 0 12px;color:var(--navy);letter-spacing:-.05em}
+.section-head p{color:#64748B;font-size:17px;font-weight:600;line-height:1.6}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:white;border:1px solid #e4edf8;border-radius:24px;padding:28px;box-shadow:0 16px 44px rgba(15,23,42,.07);transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 24px 60px rgba(6,26,58,.13)}
+.icon{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--royal));color:white;font-size:28px;margin-bottom:18px}
+.card h3{font-size:24px;margin:0 0 8px;color:var(--navy)}
+.card p{color:#64748B;line-height:1.6;font-weight:600}
+.card ul{list-style:none;padding:0;margin:18px 0;display:grid;gap:10px}
+.card li{font-weight:700;color:#334155}
+.card li:before{content:"✓";color:var(--green);font-weight:950;margin-right:8px}
+.features{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.feature{text-align:center;background:white;border:1px solid #e4edf8;border-radius:20px;padding:22px 14px}
+.feature div{font-size:28px;color:var(--blue)}
+.feature h4{margin:10px 0 6px;color:var(--navy)}
+.feature p{font-size:13px;color:#64748B;line-height:1.5;margin:0;font-weight:600}
+.cta{background:linear-gradient(135deg,var(--navy),var(--blue));color:white;border-radius:30px;padding:45px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;box-shadow:var(--shadow)}
+.cta h2{font-size:38px;margin:0 0 12px}
+.cta p{color:#dbeafe;font-size:17px;line-height:1.6}
+.cta-actions{display:flex;gap:14px;justify-content:flex-end;flex-wrap:wrap}
+footer{width:min(1180px,92%);margin:auto;padding:34px 0;border-top:1px solid #dce8f8;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#64748B;font-weight:600}
+footer img{width:155px}
+.hamburger{display:none;background:none;border:0;font-size:30px;color:var(--navy)}
+.mobile{display:none}
+@media(max-width:900px){
+.hero,.cta{grid-template-columns:1fr}
+.cards{grid-template-columns:1fr}
+.features{grid-template-columns:repeat(2,1fr)}
+.nav-links{display:none}
+.hamburger{display:block}
+.mobile.active{display:flex;position:fixed;inset:0;background:rgba(6,26,58,.97);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.mobile a{color:white;font-size:22px;font-weight:900}
+.cta-actions{justify-content:flex-start}
+footer{flex-direction:column;text-align:center}
+}
+</style>
+
+<div class="page">
+<nav class="nav">
+  <a class="brand" href="https://bizzallone.com">
+    <img src=https://assets.cdn.filesafe.space/4wdzpRSSORxzxcmMA88V/media/6a36ae256a6dd1b69a514429.png alt=Bizzall Enterprise Logo">
+  </a>
+  <div class="nav-links">
+    <a href="https://bizzallone.com">Home</a>
+    <a href="https://bizzallfinance.com/">Platforms</a>
+    <a href="https://bizzallone.com/about">About</a>
+    <a href="https://bizzallone.com/contact">Contact</a>
+    <a class="login" href="https://app.bizzallone.com">Login</a>
+    <a class="btn btn-primary" href="https://bizzallone.com/book-demo">Schedule Demo →</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+</nav>
+
+<div class="mobile" id="mobileMenu">
+  <a href="https://bizzallone.com">Home</a>
+  <a href="https://bizzallfinance.com/">Platforms</a>
+  <a href="https://bizzallone.com/about">About</a>
+  <a href="https://bizzallone.com/contact">Contact</a>
+  <a href="https://app.bizzallone.com">Login</a>
+  <a class="btn btn-primary" href="https://bizzallone.com/book-demo">Schedule Demo</a>
+</div>
+
+<main class="hero">
+  <div>
+    <div class="eyebrow">Business Technology • AI • Automation</div>
+    <h1>Technology That Helps Businesses <span>Scale Smarter.</span></h1>
+    <p>Bizzall Enterprise builds intelligent software platforms that simplify operations, automate workflows, and help organizations grow faster.</p>
+    <p>From financial services and recruiting to licensing, CRM, compliance, and AI-powered automation, we build solutions that eliminate complexity so businesses can focus on growth.</p>
+    <div class="actions">
+      <a class="btn btn-dark" href="https://bizzallone.com/platforms">Explore Our Platforms →</a>
+      <a class="btn btn-light" href="https://bizzallone.com/book-demo">Schedule a Demo →</a>
+    </div>
+    <div class="stats">
+      <div class="stat">👥 10,000+ <span>Users</span></div>
+      <div class="stat">🏢 500+ <span>Organizations</span></div>
+      <div class="stat">🛡️ 99.9% <span>Uptime</span></div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="dashboard">
+      <div class="dash-top">
+        <div class="dash-logo">Bizzall Enterprise</div>
+        <div>🔔 ⚙️ 👤</div>
+      </div>
+      <div class="metrics">
+        <div class="metric"><span>Total Revenue</span><b>$1.2M</b><small>+18.6%</small></div>
+        <div class="metric"><span>New Leads</span><b>2,453</b><small>+24.1%</small></div>
+        <div class="metric"><span>Conversion</span><b>34.6%</b><small>+12.5%</small></div>
+      </div>
+      <div class="chart">Pipeline Overview 📈</div>
+    </div>
+  </div>
+</main>
+
+<section id="platforms">
+  <div class="section-head">
+    <div class="eyebrow">Our Platforms</div>
+    <h2>Powerful Solutions. One Ecosystem.</h2>
+    <p>Bizzall Enterprise creates connected platforms that help organizations recruit, manage, automate, track, and scale with clarity.</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🔗</div>
+      <h3>BizzallFlow™</h3>
+      <p>Business workflow automation platform.</p>
+      <ul>
+        <li>CRM & Contact Management</li>
+        <li>Recruiting & Onboarding</li>
+        <li>Training & Team Management</li>
+        <li>Pipeline Automation</li>
+        <li>Advanced Reporting & Analytics</li>
+      </ul>
+      <a href="https://bizzallone.com/bizzallflow" class="login">Learn More →</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">💵</div>
+      <h3>BizzallFinance™</h3>
+      <p>Financial technology platform helping agencies simplify operations.</p>
+      <ul>
+        <li>Client & Policy Management</li>
+        <li>Compliance & Licensing</li>
+        <li>Team Growth Tools</li>
+        <li>Performance Analytics</li>
+        <li>Commission & Production Tracking</li>
+      </ul>
+      <a href="https://bizzallone.com/bizzallfinance" class="login">Learn More →</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">⌨️</div>
+      <h3>Enterprise Solutions</h3>
+      <p>Custom software development and AI automation for growing organizations.</p>
+      <ul>
+        <li>Custom CRM & Internal Platforms</li>
+        <li>API Integrations</li>
+        <li>AI Automation & Workflow Design</li>
+        <li>Dashboards & Analytics</li>
+        <li>Dedicated Implementation Support</li>
+      </ul>
+      <a href="https://bizzallone.com/enterprise" class="login">Request Consultation →</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <h2>Why Organizations Choose Bizzall</h2>
+    <p>We combine technology, automation, and strategic insight to deliver real results.</p>
+  </div>
+
+  <div class="features">
+    <div class="feature"><div>⚡</div><h4>Intelligent Automation</h4><p>Reduce repetitive work through automated workflows.</p></div>
+    <div class="feature"><div>📊</div><h4>Built for Growth</h4><p>Scale from small teams to enterprise organizations.</p></div>
+    <div class="feature"><div>📈</div><h4>Data Driven Decisions</h4><p>Real-time reporting and executive dashboards.</p></div>
+    <div class="feature"><div>✨</div><h4>AI Assisted Operations</h4><p>Leverage artificial intelligence to improve efficiency.</p></div>
+    <div class="feature"><div>🔒</div><h4>Secure Cloud Platform</h4><p>Enterprise-grade security and reliability.</p></div>
+    <div class="feature"><div>👤</div><h4>Personalized Implementation</h4><p>Every deployment is customized to your organization.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="cta">
+    <div>
+      <h2>Ready to Transform Your Business?</h2>
+      <p>Whether you're looking to automate operations, improve productivity, or build a custom software platform, Bizzall Enterprise can help.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-light" href="https://bizzallone.com/book-demo">Schedule Consultation →</a>
+      <a class="btn btn-dark" href="https://bizzallone.com/contact">Contact Sales →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src=https://assets.cdn.filesafe.space/4wdzpRSSORxzxcmMA88V/media/6a36ae256a6dd1b69a514429.png alt="Bizzall Enterprise Logo">
+  <div>Business Technology. Intelligent Automation. Enterprise Solutions.</div>
+  <div>Dallas, Texas • <a href="mailto:support@bizzallone.com">support@bizzallone.com</a></div>
+  <div>© 2026 Bizzall Enterprise. All Rights Reserved.</div>
+</footer>
+</div>
+
+<script>
+function toggleMenu(){
+  document.getElementById("mobileMenu").classList.toggle("active");
+}
+</script>
+```
